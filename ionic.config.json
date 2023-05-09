@@ -1,0 +1,7 @@
+{
+  "name": "NayasaApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
