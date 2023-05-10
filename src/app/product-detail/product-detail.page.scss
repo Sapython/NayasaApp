@@ -1,0 +1,318 @@
+.detail {
+    display: flex;
+    flex-direction: column;
+
+    .head {
+        display: flex;
+        justify-content: space-between;
+
+        h1 {
+            color: #e68d9d;
+            font-weight: 500;
+        }
+
+        .heart {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            max-height: 30px;
+
+            // max-width:30px;
+            #heartImg,
+            #shareImg {
+                padding: 2px;
+                background-color: var(--color-light-secondary);
+                border: 1px solid #E9E9E9;
+            }
+        }
+    }
+
+    hr {
+        margin: 1rem 0;
+        border: 1px solid #c9c9c9;
+        height: 0px;
+    }
+
+    .priceInfo {
+        display: blocks;
+        flex-direction: row;
+        justify-content: space-between;
+
+        padding: 12px 20px;
+
+        background-color: #FFEFF2;
+        border-radius: 8px;
+
+        max-height: 80px;
+
+        .pricing {
+            display: flex;
+            flex-direction: column;
+
+            h2 {
+                font-size: var(--medium);
+                font-family: var(--font-ten);
+                color: var(--color-dark-primary);
+                margin: 0px !important;
+
+                display: flex;
+                align-items: center;
+                gap: 12px;
+
+                del {
+                    font-size: var(--msmall);
+                    color: #9D9FA4;
+                }
+            }
+
+            #subText {
+                color: #707477;
+                font-size: var(--xxsmall) !important;
+            }
+        }
+
+        .couponInfo {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+
+            p {
+                color: var(--color-coupon);
+                font-size: var(--xsmall);
+                margin: 0px !important;
+            }
+        }
+    }
+
+    .options {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 18px;
+
+        .dropdownCtn {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .upperSec {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+
+            .lowerSec {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                flex: 1 1;
+
+                .pincode {
+                    display: flex;
+                    flex-direction: column;
+                    max-width: 212px;
+                }
+            }
+        }
+
+        .pink {
+            color: #E88F9F;
+            background: none;
+        }
+
+        .quantity {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            border-radius: 5px;
+
+            #label {
+                color: #5C5E62;
+            }
+
+            .input {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+
+            button {
+                width: 30px;
+                height: 30px;
+                border-radius: 8px;
+                border: none;
+                background: #FFB2C0;
+                color: #fff;
+
+                &:active {
+                    background: #FFB2C0;
+                }
+
+                &:disabled {
+                    background: #c9c9c9;
+                }
+            }
+
+            input {
+                background: var(--color-light);
+                border: none;
+                outline: none;
+                height: 30px;
+                padding: 0px 10px;
+                font-size: 14px;
+                text-align: center;
+                width: 30px;
+                border: 0.68512px solid #E88F9F;
+                border-radius: 7px;
+            }
+        }
+    }
+
+    .actions {
+        display: flex;
+        justify-content: flex-start;
+        gap: 30px;
+        align-items: center;
+
+        button {
+            border: none;
+            outline: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: var(--small);
+        }
+
+        #addToCart {
+            background-color: var(--color-light);
+            color: #E88F9F;
+            border: 1px solid #E88F9F;
+            border-radius: 12px;
+        }
+
+        #buyNow {
+            background-color: #E88F9F;
+            color: var(--color-light);
+            border-radius: 12px;
+        }
+    }
+}
+
+section.product-service {
+    background: #FFEFF2;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 40px 0px;
+
+    .product-service-1 {
+        img {
+            width: 4vw;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h4 {
+            font-size: 20px;
+            text-align: center;
+        }
+
+    }
+
+}
+
+.detailBox {
+    height: 400px;
+    overflow: auto;
+}
+
+.detailBox::-webkit-scrollbar {
+    display: none;
+}
+
+.subHeading {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    color: #E88F9F;
+}
+
+.subText {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #5C5E62;
+}
+
+.productDetail>div {
+    padding: 12px;
+    border: 1.5px solid #c9c9c9;
+    border-radius: 10px;
+    text-align: center;
+
+    h3 {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        color: #E88F9F;
+    }
+
+    h5 {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;
+        color: #5C5E62;
+    }
+
+}
+
+.diamondGermsBox {
+    margin-top: 10px;
+    display: flex;
+    column-gap: 20px;
+
+    h3 {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        color: #E88F9F;
+    }
+}
+
+.diamondImg {
+    width: 60px;
+}
+
+.diamondSection {
+    margin-top: 15px;
+    border-radius: 10px;
+    border: 1px solid #c9c9c9;
+    padding: 24px;
+    padding-right: 0px;
+}
+
+.tableHeading {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: #5C5E62;
+}
+
+.tableSubText {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #5C5E62;
+}
