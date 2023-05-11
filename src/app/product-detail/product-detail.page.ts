@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { register } from 'swiper/element/bundle';
-register();
+// import { register } from 'swiper/element/bundle';
+// register();
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.page.html',

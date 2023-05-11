@@ -12,8 +12,10 @@ import { ProductDetailPage } from './product-detail.page';
   imports: [
     CommonModule,
     FormsModule,
+
     IonicModule,
     ProductDetailPageRoutingModule,
+
   ],
   declarations: [ProductDetailPage],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
