@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ProductDetailPageRoutingModule } from './product-detail-routing.module';
 
 import { ProductDetailPage } from './product-detail.page';
-
+// import { SwiperModule } from 'swiper/angular';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     ProductDetailPageRoutingModule,
+    // SwiperModule,
+
   ],
   declarations: [ProductDetailPage],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

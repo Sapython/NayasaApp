@@ -1,85 +1,206 @@
-<!-- <swiper-container>
-  <swiper-slide>Slide 1</swiper-slide>
-  <swiper-slide>Slide 2</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
-</swiper-container> -->
-<div class="detail">
-  <div class="head">
-    <h1>{{ product.name }}</h1>
-    <div class="heart">
-      <div (click)="liked = !liked" id="heartImg">
-        <img *ngIf="!liked" src="assets\HEAART.svg" alt="">
-        <img *ngIf="liked" src="assets\Filled heart.svg" alt="">
-      </div>
-      <div id="shareImg"><img src="assets\material-symbols_share-outline.svg" alt=""></div>
-    </div>
-  </div>
-  <p>{{ product.description }}</p>
-  <div class="priceInfo">
-    <div class="pricing">
-      <div>
-        <h2>
-          {{
-          (product.configuredPrice
-          ? product.configuredPrice
-          : product.price) * quantity | currency : "INR" : "symbol-narrow"
-          }} <del> &#8377;{{ price + 10000 }}</del>
-        </h2>
-      </div>
-      <div>
-        <p id="subText">(MRP Incl. of all taxes)</p>
+<ion-content>
+  <section></section>
+  <div class="detail">
+    <div class="head">
+      <h1>{{ product.name }}</h1>
+      <div class="heart">
+        <div (click)="liked = !liked" id="heartImg">
+          <img *ngIf="!liked" src="assets\HEAART.svg" alt="">
+          <img *ngIf="liked" src="assets\Filled heart.svg" alt="">
+        </div>
+        <div id="shareImg"><img src="assets\material-symbols_share-outline.svg" alt=""></div>
       </div>
     </div>
-    <div class="couponInfo">
-      <div id="coupon"><img src="assets\ticket-discount.svg" alt="coupon"></div>
-      <div id="couponText">
-        <p>20% Off on Making Charge</p>
+    <p id="desc">{{ product.description }}</p>
+    <div class="priceInfo">
+      <div class="pricing">
+        <div>
+          <h2>
+            {{
+            (product.configuredPrice
+            ? product.configuredPrice
+            : product.price) * quantity | currency : "INR" : "symbol-narrow"
+            }} <del> &#8377;{{ price + 10000 }}</del>
+          </h2>
+        </div>
+        <div>
+          <p id="subText">(MRP Incl. of all taxes)</p>
+        </div>
+        <div class="couponInfo">
+          <div id="coupon"><img src="assets\ticket-discount.svg" alt="coupon"></div>
+          <div id="couponText">
+            <p>20% Off on Making Charge</p>
+          </div>
+        </div>
       </div>
+
     </div>
-  </div>
-  <div class="options">
-    <div class="dropdownCtn">
-      <div class="upperSec">
-        <div>
-          <mat-form-field appearance="outline">
-            <mat-label>Size</mat-label>
-            <mat-select placeholder="Size" name="metal">
-              <mat-option *ngFor="let metal of product.sizeTypes" [value]="metal">
-                {{ metal.size }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div>
-          <mat-form-field appearance="outline">
-            <mat-label>Metal</mat-label>
-            <mat-select placeholder="Metal" name="metal">
-              <mat-option *ngFor="let metal of product.metalTypes" [value]="metal">
-                {{metal.type}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="lowerSec">
-        <div>
-          <mat-form-field appearance="outline">
-            <mat-label>Diamond</mat-label>
-            <mat-select placeholder="Metal Purity" name="metal">
-              <mat-option *ngFor="let metal of product.diamondTypes" [value]="metal">
-                {{ metal.name }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
+    <div class="options">
+      <div class="dropdownCtn">
+        <ion-button id="open-modal" expand="block">Select Size</ion-button>
+
+        <ion-modal #modal trigger="open-modal" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]"
+          class="ionic-btn">
+          <ng-template>
+            <ion-content>
+              <ion-searchbar placeholder="Search" (click)="modal.setCurrentBreakpoint(0.75)"></ion-searchbar>
+              <ion-list>
+                <ion-item>
+                  <ion-avatar slot="start">
+                    <ion-img src="https://i.pravatar.cc/300?u=b"></ion-img>
+                  </ion-avatar>
+                  <ion-label>
+                    <h2>18 (57.8 mm) - in Stock!</h2>
+                    <!-- <p>Sales Rep</p> -->
+                  </ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-avatar slot="start">
+                    <ion-img src="https://i.pravatar.cc/300?u=a"></ion-img>
+                  </ion-avatar>
+                  <ion-label>
+                    <h2>18 (57.8 mm) - in Stock!</h2>
+                    <!-- <p>Product Designer</p> -->
+                  </ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-avatar slot="start">
+                    <ion-img src="https://i.pravatar.cc/300?u=d"></ion-img>
+                  </ion-avatar>
+                  <ion-label>
+                    <h2>18 (57.8 mm) - in Stock!</h2>
+                    <!-- <p>Director of Operations</p> -->
+                  </ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-avatar slot="start">
+                    <ion-img src="https://i.pravatar.cc/300?u=e"></ion-img>
+                  </ion-avatar>
+                  <ion-label>
+                    <h2>18 (57.8 mm) - in Stock!</h2>
+                    <!-- <p>CEO</p> -->
+                  </ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-content>
+          </ng-template>
+        </ion-modal>
+
+        <ion-button id="open-modal" expand="block">Metal</ion-button>
+
+        <ion-modal #modal trigger="open-modal" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+          <ng-template>
+            <ion-content>
+              <ion-searchbar placeholder="Search" (click)="modal.setCurrentBreakpoint(0.75)"></ion-searchbar>
+              <ion-list>
+                <ion-item>
+                  <ion-avatar slot="start">
+                    <ion-img src="https://i.pravatar.cc/300?u=b"></ion-img>
+                  </ion-avatar>
+                  <ion-label>
+                    <h2>18KT White Gold</h2>
+                    <!-- <p>Sales Rep</p> -->
+                  </ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-avatar slot="start">
+                    <ion-img src="https://i.pravatar.cc/300?u=a"></ion-img>
+                  </ion-avatar>
+                  <ion-label>
+                    <h2>18KT White Gold</h2>
+                    <!-- <p>Product Designer</p> -->
+                  </ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-avatar slot="start">
+                    <ion-img src="https://i.pravatar.cc/300?u=d"></ion-img>
+                  </ion-avatar>
+                  <ion-label>
+                    <h2>18KT White Gold</h2>
+                    <!-- <p>Director of Operations</p> -->
+                  </ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-avatar slot="start">
+                    <ion-img src="https://i.pravatar.cc/300?u=e"></ion-img>
+                  </ion-avatar>
+                  <ion-label>
+                    <h2>18KT White Gold</h2>
+                    <!-- <p>CEO</p> -->
+                  </ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-content>
+          </ng-template>
+        </ion-modal>
+        <!-- 3 -->
+        <ion-button id="open-modal" expand="block">Diamond</ion-button>
+
+        <ion-modal #modal trigger="open-modal" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+          <ng-template>
+            <ion-content>
+              <ion-searchbar placeholder="Search" (click)="modal.setCurrentBreakpoint(0.75)"></ion-searchbar>
+              <ion-list>
+                <ion-item>
+                  <ion-avatar slot="start">
+                    <ion-img src="https://i.pravatar.cc/300?u=b"></ion-img>
+                  </ion-avatar>
+                  <ion-label>
+                    <h2>GH-SI</h2>
+                    <!-- <p>Sales Rep</p> -->
+                  </ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-avatar slot="start">
+                    <ion-img src="https://i.pravatar.cc/300?u=a"></ion-img>
+                  </ion-avatar>
+                  <ion-label>
+                    <h2>GH-SI</h2>
+                    <!-- <p>Product Designer</p> -->
+                  </ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-avatar slot="start">
+                    <ion-img src="https://i.pravatar.cc/300?u=d"></ion-img>
+                  </ion-avatar>
+                  <ion-label>
+                    <h2>GH-SI</h2>
+                    <!-- <p>Director of Operations</p> -->
+                  </ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-avatar slot="start">
+                    <ion-img src="https://i.pravatar.cc/300?u=e"></ion-img>
+                  </ion-avatar>
+                  <ion-label>
+                    <h2>GH-SI</h2>
+                    <!-- <p>CEO</p> -->
+                  </ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-content>
+          </ng-template>
+        </ion-modal>
+
+
+
+
+
+
+
         <div class="pincode">
-          <mat-form-field appearance="outline">
+          <!-- <mat-form-field appearance="outline">
             <mat-label class="label">
               <span>Pincode</span>
               <img src="assets\pincode.svg">
             </mat-label>
             <input matInput #pincode />
-          </mat-form-field>
+          </mat-form-field> -->
+          <div class="pin-inpt">
+            <label for="pincode">Check Delivery </label> <!-- <img src="../../assets/location.svg" alt="">--><br>
+            <input type="text" id="pincode" #pincode name="pincode" placeholder="pincode">
+          </div>
+          <br>
           <span>
             Delivery By Today Evening <mark class="pink">{{date}}</mark> for Pincode
             <mark class="pink">{{ pincode.value ? pincode.value : "211019" }}</mark>
@@ -104,89 +225,102 @@
       </div>
     </div>
   </div>
-</div>
-<section class="product-service">
-  <div class="product-service-1">
-    <img src="../../assets/fluent_archive-arrow-back-16-regular.svg" alt="">
-    <h4>
-      30 -Day Money Back
-    </h4>
-  </div>
-  <div class="product-service-1">
-    <img src="../../assets/uil_exchange.svg" alt="">
-    <h4>
-      Lifetime Exchange & <br> Buy-Back
-    </h4>
-  </div>
-  <div class="product-service-1">
-    <img src="../../assets/Mask group.png" alt="">
-    <h4>
-      CaratLane Assurity <br> 100% CaratLane <br> Certified
-    </h4>
-  </div>
-</section>
-<section>
-  <li class="detailBox">
-    <h2 class="subHeading">Product Details</h2>
-    <p class="subText">Diamond Ring 18Kt Gold(5.68 gram) with Diamond(0.4130 Ct)</p>
-    <div class="productDetail">
-      <div>
-        <img src="../../../assets/product-page/Purity.png" alt="" class="detailImg">
-        <h3>Purity</h3>
-        <h5>18 KT</h5>
-      </div>
-      <div>
-        <img src="../../../assets/product-page/dimensions (2).png" alt="" class="detailImg">
-        <h3>Dimensions</h3>
-        <h5>Width - 5 mm</h5>
-        <h5>Height - 5.5 mm</h5>
-        <h5>Size - 12(51.8 mm)</h5>
-      </div>
-      <div>
-        <img src="../../../assets/product-page/weight (2).png" alt="" class="detailImg">
-        <h3>Weight</h3>
-        <h5>Gross - 2.40 g</h5>
-      </div>
+
+  <section class="product-service">
+    <div class="product-service-1">
+      <img src="../../assets/fluent_archive-arrow-back-16-regular.svg" alt="">
+      <h4>
+        30 -Day Money Back
+      </h4>
     </div>
-
-    <!-- Table -->
-    <section class="diamondSection">
-      <div class="diamondGermsBox">
-        <img src="../../../../assets/product-page/diamond & gemstones.png" alt="" class="diamondImg">
-        <h3>Diamond & Germstones</h3>
+    <div class="product-service-1">
+      <img src="../../assets/uil_exchange.svg" alt="">
+      <h4>
+        Lifetime Exchange & <br> Buy-Back
+      </h4>
+    </div>
+    <div class="product-service-1">
+      <img src="../../assets/Mask group.png" alt="">
+      <h4>
+        CaratLane Assurity <br> 100% CaratLane <br> Certified
+      </h4>
+    </div>
+  </section>
+  <section>
+    <li class="detailBox">
+      <h2 class="subHeading">Product Details</h2>
+      <p class="subText">Diamond Ring 18Kt Gold(5.68 gram) with Diamond(0.4130 Ct)</p>
+      <div class="productDetail">
+        <div class="common-product">
+          <div class="dimn-wt">
+            <div class="dimn-wt-common">
+              <img src="../../assets/Group 10394.png" alt="" class="detailImg">
+              <h3>Dimensions</h3>
+            </div>
+            <h5>Width - 5 mm</h5>
+            <h5>Height - 5.5 mm</h5>
+            <h5>Size - 12(51.8 mm)</h5>
+          </div>
+          <div class="dimn-wt">
+            <div class="dimn-wt-common">
+              <img src="../../assets/Group 10398.png" alt="" class="detailImg">
+              <h3>Weight</h3>
+            </div>
+            <h5>Gross - 2.40 g</h5>
+          </div>
+        </div>
+        <div class="purity">
+          <img src="../../assets/PURITY.svg" alt="" class="detailImg">
+          <h3>Purity</h3>
+          <h5>18 KT</h5>
+        </div>
       </div>
-      <table class="uk-table">
 
-        <thead>
-          <tr>
-            <th class="tableHeading">Diamond Type</th>
-            <th class="tableHeading">Setting</th>
-            <th class="tableHeading">Total Number</th>
-            <th class="tableHeading">Total Weight</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="tableSubText">IJ-SI</td>
-            <td class="tableSubText">Prong</td>
-            <td class="tableSubText">2</td>
-            <td class="tableSubText">0.100 ct</td>
-          </tr>
-          <tr>
-            <td class="tableSubText">IJ-SI</td>
-            <td class="tableSubText">Prong</td>
-            <td class="tableSubText">1</td>
-            <td class="tableSubText">0.300 ct</td>
-          </tr>
-          <tr>
-            <td class="tableSubText">IJ-SI</td>
-            <td class="tableSubText">Prong</td>
-            <td class="tableSubText">2</td>
-            <td class="tableSubText">0.700 ct</td>
-          </tr>
+      <!-- Table -->
+      <section class="diamondSection">
+        <div class="dmnd-section">
+          <div class="diamondGermsBox">
+            <img src="../../assets/Group 10393.svg" alt="" class="diamondImg">
+            <h3>Diamond & Germstones</h3>
+          </div>
+          <table class="uk-table">
 
-        </tbody>
+            <thead>
+              <tr>
+                <th class="tableHeading">Diamond Type</th>
+                <th class="tableHeading">Setting</th>
+                <th class="tableHeading">Total Number</th>
+                <th class="tableHeading">Total Weight</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tableSubText">IJ-SI</td>
+                <td class="tableSubText">Prong</td>
+                <td class="tableSubText">2</td>
+                <td class="tableSubText">0.100 ct</td>
+              </tr>
+              <tr>
+                <td class="tableSubText">IJ-SI</td>
+                <td class="tableSubText">Prong</td>
+                <td class="tableSubText">1</td>
+                <td class="tableSubText">0.300 ct</td>
+              </tr>
+              <tr>
+                <td class="tableSubText">IJ-SI</td>
+                <td class="tableSubText">Prong</td>
+                <td class="tableSubText">2</td>
+                <td class="tableSubText">0.700 ct</td>
+              </tr>
 
-      </table>
-    </section>
-</section>
+            </tbody>
+
+          </table>
+        </div>
+      </section>
+  </section>
+  <section>
+    <h2>ok</h2>
+  </section>
+
+</ion-content>
