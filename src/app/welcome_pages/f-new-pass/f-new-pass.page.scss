@@ -1,0 +1,135 @@
+.main{
+    display: block;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Roboto';
+    font-style: normal;
+  
+    .arrow{
+         padding-top: 50px;
+            float: left;
+    }
+    ion-icon{
+        // position: relative;
+        color: rgba(216, 134, 148, 1);
+        font-size: 30px;
+        
+   
+       }
+   
+   h1{
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    float: left;
+    margin-top: 50px;
+    margin-left: -18px;
+    margin-bottom: 30px;
+    margin-top: 70px;
+    line-height: 110%;
+    letter-spacing: -0.01em;
+    color: #D88694;
+
+   }
+    .inp{
+        box-sizing: border-box;
+        width: 100%;
+        bottom: 51.97%;
+        margin: 5px;
+        padding: 15px 15px;
+        background: #F7F8F9;
+        border: 1px solid #E8ECF4;
+        border-radius: 8px;
+    }
+    .btns{
+        font-family: "Roboto";
+        width: 100px;
+        height: 72px;
+        font-style: normal;
+        font-weight: 600;
+     background-color: white;
+        font-size: 27px;
+        // margin: 10px;
+        line-height: 21px;
+        color: #474A56
+
+    }
+    .cancel{
+        // border: 1.5px solid #474A56;
+border-radius: 2px;
+transform: matrix(-1, 0, 0, 1, 0, 0);
+
+    }
+    .close{
+        color: rgba(71, 74, 86, 1);
+    }
+    .section{
+        display: grid;
+        justify-content: space-evenly;
+        padding: 55px 58px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .btn{
+        width: 100%;
+        padding: 20px 50px;
+        bottom: 0%;
+        font-weight: 700;
+        font-size: 21px;
+        color: #fff;
+        background: #E88F9F;
+        border-radius: 8px;
+        box-shadow: 4px 4px 5px rgba(187, 104, 120, 0.3);
+        margin-bottom:  20px;
+    }
+    .box{
+        background: #FFFFFF;
+        box-shadow: 0px -2px 20px rgba(0, 0, 0, 0.08);
+        padding: 20px 30px;
+        border-radius: 0px;
+        width: 100%;
+  
+    }
+}
+
+#popup{
+    display: block;
+      justify-content: center;
+      text-align: center;
+      position: fixed;
+      top: 45%;
+      border: 1px solid #8080804f;
+      line-height: 1;
+      width: 445px;
+      border-radius: 15px;
+      padding: 22px 40px;
+      background-color: #fff;
+  
+      @media (max-width:1500px) {
+        top:32%;
+        width: 256px;
+        padding: 0px 0px;
+      }
+    img{
+      padding: 20px;
+    }
+  
+    p{
+      font-family: 'Poppins';
+      font-size: 24px;
+      padding: 10px;
+      font-weight: 500;
+    }
+    .buttonn{
+        padding: 16px 24px;
+        margin: 10px;
+        border: 1px solid #ce7989;
+        width: 170px;
+        font-size: 19px;
+        color: #ce7989;
+        box-shadow: black;
+        background: white;
+        border-radius: 7px;
+    }
+  }
+  

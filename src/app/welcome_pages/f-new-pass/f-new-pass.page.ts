@@ -8,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class FNewPassPage implements OnInit {
 
   constructor() { }
+  pop: boolean = false;
 
+
+  onclicked() {
+    this.pop = true;
+
+  }
+  home() {
+    this.pop = false;
+
+  }
   ngOnInit() {
   }
 
