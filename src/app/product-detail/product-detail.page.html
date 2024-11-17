@@ -1,0 +1,192 @@
+<!-- <swiper-container>
+  <swiper-slide>Slide 1</swiper-slide>
+  <swiper-slide>Slide 2</swiper-slide>
+  <swiper-slide>Slide 3</swiper-slide>
+</swiper-container> -->
+<div class="detail">
+  <div class="head">
+    <h1>{{ product.name }}</h1>
+    <div class="heart">
+      <div (click)="liked = !liked" id="heartImg">
+        <img *ngIf="!liked" src="assets\HEAART.svg" alt="">
+        <img *ngIf="liked" src="assets\Filled heart.svg" alt="">
+      </div>
+      <div id="shareImg"><img src="assets\material-symbols_share-outline.svg" alt=""></div>
+    </div>
+  </div>
+  <p>{{ product.description }}</p>
+  <div class="priceInfo">
+    <div class="pricing">
+      <div>
+        <h2>
+          {{
+          (product.configuredPrice
+          ? product.configuredPrice
+          : product.price) * quantity | currency : "INR" : "symbol-narrow"
+          }} <del> &#8377;{{ price + 10000 }}</del>
+        </h2>
+      </div>
+      <div>
+        <p id="subText">(MRP Incl. of all taxes)</p>
+      </div>
+    </div>
+    <div class="couponInfo">
+      <div id="coupon"><img src="assets\ticket-discount.svg" alt="coupon"></div>
+      <div id="couponText">
+        <p>20% Off on Making Charge</p>
+      </div>
+    </div>
+  </div>
+  <div class="options">
+    <div class="dropdownCtn">
+      <div class="upperSec">
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Size</mat-label>
+            <mat-select placeholder="Size" name="metal">
+              <mat-option *ngFor="let metal of product.sizeTypes" [value]="metal">
+                {{ metal.size }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Metal</mat-label>
+            <mat-select placeholder="Metal" name="metal">
+              <mat-option *ngFor="let metal of product.metalTypes" [value]="metal">
+                {{metal.type}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="lowerSec">
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Diamond</mat-label>
+            <mat-select placeholder="Metal Purity" name="metal">
+              <mat-option *ngFor="let metal of product.diamondTypes" [value]="metal">
+                {{ metal.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="pincode">
+          <mat-form-field appearance="outline">
+            <mat-label class="label">
+              <span>Pincode</span>
+              <img src="assets\pincode.svg">
+            </mat-label>
+            <input matInput #pincode />
+          </mat-form-field>
+          <span>
+            Delivery By Today Evening <mark class="pink">{{date}}</mark> for Pincode
+            <mark class="pink">{{ pincode.value ? pincode.value : "211019" }}</mark>
+          </span>
+        </div>
+      </div>
+      <div class="quantity">
+        <p id="label">Quanity</p>
+        <div class="input">
+          <button [disabled]="quantity == 1" (click)="quantity = quantity - 1">
+            <i class="ri-subtract-fill"></i>
+          </button>
+          <input type="number" [(ngModel)]="quantity" [ngModelOptions]="{ standalone: true }" type="text" />
+          <button (click)="quantity = quantity + 1">
+            <i class="ri-add-fill"></i>
+          </button>
+        </div>
+      </div>
+      <div class="actions">
+        <button id="addToCart" routerLink="../cart">Add To Cart</button>
+        <button id="buyNow" routerLink="../choose-delivery-address">Buy Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="product-service">
+  <div class="product-service-1">
+    <img src="../../assets/fluent_archive-arrow-back-16-regular.svg" alt="">
+    <h4>
+      30 -Day Money Back
+    </h4>
+  </div>
+  <div class="product-service-1">
+    <img src="../../assets/uil_exchange.svg" alt="">
+    <h4>
+      Lifetime Exchange & <br> Buy-Back
+    </h4>
+  </div>
+  <div class="product-service-1">
+    <img src="../../assets/Mask group.png" alt="">
+    <h4>
+      CaratLane Assurity <br> 100% CaratLane <br> Certified
+    </h4>
+  </div>
+</section>
+<section>
+  <li class="detailBox">
+    <h2 class="subHeading">Product Details</h2>
+    <p class="subText">Diamond Ring 18Kt Gold(5.68 gram) with Diamond(0.4130 Ct)</p>
+    <div class="productDetail">
+      <div>
+        <img src="../../../assets/product-page/Purity.png" alt="" class="detailImg">
+        <h3>Purity</h3>
+        <h5>18 KT</h5>
+      </div>
+      <div>
+        <img src="../../../assets/product-page/dimensions (2).png" alt="" class="detailImg">
+        <h3>Dimensions</h3>
+        <h5>Width - 5 mm</h5>
+        <h5>Height - 5.5 mm</h5>
+        <h5>Size - 12(51.8 mm)</h5>
+      </div>
+      <div>
+        <img src="../../../assets/product-page/weight (2).png" alt="" class="detailImg">
+        <h3>Weight</h3>
+        <h5>Gross - 2.40 g</h5>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <section class="diamondSection">
+      <div class="diamondGermsBox">
+        <img src="../../../../assets/product-page/diamond & gemstones.png" alt="" class="diamondImg">
+        <h3>Diamond & Germstones</h3>
+      </div>
+      <table class="uk-table">
+
+        <thead>
+          <tr>
+            <th class="tableHeading">Diamond Type</th>
+            <th class="tableHeading">Setting</th>
+            <th class="tableHeading">Total Number</th>
+            <th class="tableHeading">Total Weight</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tableSubText">IJ-SI</td>
+            <td class="tableSubText">Prong</td>
+            <td class="tableSubText">2</td>
+            <td class="tableSubText">0.100 ct</td>
+          </tr>
+          <tr>
+            <td class="tableSubText">IJ-SI</td>
+            <td class="tableSubText">Prong</td>
+            <td class="tableSubText">1</td>
+            <td class="tableSubText">0.300 ct</td>
+          </tr>
+          <tr>
+            <td class="tableSubText">IJ-SI</td>
+            <td class="tableSubText">Prong</td>
+            <td class="tableSubText">2</td>
+            <td class="tableSubText">0.700 ct</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+    </section>
+</section>
